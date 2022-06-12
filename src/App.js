@@ -7,7 +7,30 @@ function App() {
 
   return (
     <div className="app">
-      Hola
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            <p>Paris</p>
+          </div>
+          <div className="temp">
+            <h1>23°C</h1>
+          </div>
+          <div className="description">
+             <p>Ensoleillé</p>
+          </div>
+        </div>
+        <div className="bottom">
+          <div className="feels">
+            <p>23°C</p>
+          </div>
+          <div className="humidity">
+            <p>32%</p>
+          </div>
+          <div className="wind">
+            13 km / h
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
