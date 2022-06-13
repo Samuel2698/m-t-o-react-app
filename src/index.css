@@ -4,10 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
-  margin: 0;
   font-family: 'Outfit', BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -33,7 +33,7 @@ h1 {
 
 .app:before {
   content: '';
-  background: url('./assets/sunset.jpg') no-repeat center center/cover;
+  background: url('./assets/atardecer.jfif') no-repeat center center/cover;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -41,3 +41,67 @@ h1 {
   left: 0;
   z-index: -1;
 }
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app .top {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.app .description {
+  position: relative;
+  transform-origin: 0 0;
+
+}
+
+.app .bottom {
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, .2);
+}
+
+
+
+@media screen and (min-width: 500px) {
+  
+  .app:before {
+    content: '';
+    background: url('./assets/faro.jpg') no-repeat center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app:before {
+    content: '';
+    background: url('./assets/sunset.jpg') no-repeat center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
