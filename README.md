@@ -1,3 +1,3 @@
 # météo-react-app
 
-App en construction.
+Application météo construite avec React en utilisant OpenWeatherMap API.
