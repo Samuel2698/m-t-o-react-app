@@ -80,6 +80,24 @@ h1 {
   font-weight: 600;
 }
 
+.app .search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.app input {
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .1);
+  color: #f8f8f8;
+}
+
+::placeholder {
+  color: #f8f8f8;
+}
+
 @media screen and (min-width: 500px) {
   
   .app:before {

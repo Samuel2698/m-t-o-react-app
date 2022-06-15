@@ -13,6 +13,7 @@ function App() {
         setData(response.data)
         console.log(response.data)
       })
+      setLocation('')
     }
   }
 
@@ -22,7 +23,7 @@ function App() {
         <input
           value={location}
           type="text"
-          placeholder="Rechercher un emplacement"
+          placeholder="Emplacement:"
           onChange={event => setLocation(event.target.value)}
           onKeyPress={searchLocation}
         />
@@ -30,10 +31,10 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>Paris</p>
+            <p>{data.name}</p>
           </div>
           <div className="temp">
-            <h1>23°C</h1>
+            {data.main ? <h1>{data.main.temp}</h1> : null}
           </div>
           <div className="description">
              <p>Ensoleillé</p>
