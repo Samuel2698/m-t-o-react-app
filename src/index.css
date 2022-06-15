@@ -66,7 +66,7 @@ h1 {
 }
 
 .app .bottom {
-  margin-bottom: 150px;
+  margin-bottom: 180px;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
@@ -74,6 +74,10 @@ h1 {
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, .2);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
 
 .bold {
