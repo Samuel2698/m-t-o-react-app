@@ -1,22 +1,21 @@
-import React, {useState} from "react";
-import axios from 'axios'
-
+import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
-  const [data, setData] = useState({})
-  const [location, setLocation] = useState('')
+  const [data, setData] = useState({});
+  const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=4a81816180e2bc38c902b0829da85882`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=4a81816180e2bc38c902b0829da85882`;
 
   const searchLocation = (event) => {
-    if(event.key === 'Enter') {
+    if (event.key === "Enter") {
       axios.get(url).then((response) => {
-        setData(response.data)
-        console.log(response.data)
-      })
-      setLocation('')
+        setData(response.data);
+        console.log(response.data);
+      });
+      setLocation("");
     }
-  }
+  };
 
   return (
     <div className="app">
@@ -25,7 +24,7 @@ function App() {
           value={location}
           type="text"
           placeholder="Enter location"
-          onChange={event => setLocation(event.target.value)}
+          onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
         />
       </div>
@@ -42,28 +41,29 @@ function App() {
           </div>
         </div>
 
-      {data.name != undefined && 
-        <div className="bottom">
-          <div className="feels">
-            {data.main ? <p className="bold">{data.main.feels_like.toFixed()}°C</p> : null}
-            <p>Feels L.</p>
+        {data.name != undefined && (
+          <div className="bottom">
+            <div className="feels">
+              {data.main ? (
+                <p className="bold">{data.main.feels_like.toFixed()}°C</p>
+              ) : null}
+              <p>Feels L.</p>
+            </div>
+            <div className="humidity">
+              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+              <p>Humidity</p>
+            </div>
+            <div className="wind">
+              {data.wind ? (
+                <p className="bold">{data.wind.speed.toFixed()} m/s</p>
+              ) : null}
+              <p>Wind</p>
+            </div>
           </div>
-          <div className="humidity">
-            {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
-            <p>Humidity</p>
-          </div>
-          <div className="wind">
-            {data.wind ? <p className="bold">{data.wind.speed.toFixed()} MPH</p> : null}
-            <p>Wind</p>
-          </div>
-        </div>
-      }
-
-
+        )}
       </div>
     </div>
   );
 }
 
 export default App;
-
