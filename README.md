@@ -1,3 +1,3 @@
-# météo-react-css-api
+# météo-react-app
 
 Application météo construite avec React en utilisant OpenWeatherMap API.
